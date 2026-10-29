@@ -1,20 +1,20 @@
-<!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>广宏鞋业ERP系统 v5.6 尽力版</title>
+<标题>广宏鞋业ERP系统 v5.6 尽力版</标题>
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<链接 href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="样式表">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-<script>
+<脚本>
 
 // ======= 统一筛选工具函数 v3.7 =======
-function toggleFilterPanel(panelId, btn) {
+函数 toggleFilterPanel(panelId, btn) {
   const panel = document.getElementById(panelId);
-  if (!panel) return;
-  panel.classList.toggle('show');
+  如果 (!面板) 返回;
+  面板.classList.toggle('show');
   if (btn) btn.classList.toggle('active', panel.classList.contains('show'));
 }
 
@@ -30,10 +30,10 @@ function resetFiltersForModule(moduleKey, renderFn) {
 
 function updateFilterBadge(btnId, count) {
   const btn = document.getElementById(btnId);
-  if (!btn) return;
-  let badge = btn.querySelector('.filter-badge');
-  if (count > 0) {
-    if (!badge) {
+  如果 (!btn) 返回;
+  let 徽章 = 按钮.querySelector('.filter-badge');
+  如果 (count > 0) {
+    如果 (!徽章) {
       badge = document.createElement('span');
       badge.className = 'filter-badge';
       btn.appendChild(badge);
@@ -4875,7 +4875,7 @@ function renderSyncPage(){
     // 局域网服务器连接卡片
     '<div class="sync-card lan"><div class="sync-card-hd"><div class="sync-card-tt"><i class="fa fa-server" style="color:#2563eb"></i>局域网服务器协同（多电脑）</div><span class="sync-badge" id="syncLanBadge">未连接</span></div>'+
     '<div class="sync-card-bd"><p class="sync-desc">启动 <b>启动ERP服务器.bat</b>（运行server.js）后，同一局域网内多台电脑可连接服务器实现数据实时同步。</p>'+
-    '<div class="mb-3"><label class="text-xs text-gray-600 block mb-1">服务器地址（主机IP:端口）</label><div class="flex gap-2"><input type="text" class="flex-1 border rounded px-2 py-1.5 text-sm" id="syncServerAddr" placeholder="例如：192.168.1.100:7001" value="'+escHtml(serverAddr)+'"><button class="px-3 py-1.5 text-xs bg-blue-600 text-white rounded hover:bg-blue-700" onclick="syncGetServerIps()"><i class="fa fa-question-circle"></i></button></div></div>'+
+    '<div class="mb-3"><label class="text-xs text-gray-600 block mb-1">服务器地址（主机IP:端口）</label><div class="flex gap-2"><input type="text" class="flex-1 border rounded px-2 py-1.5 text-sm" id="syncServerAddr" placeholder="例如：192.168.1.8:7001" value="'+escHtml(serverAddr)+'"><button class="px-3 py-1.5 text-xs bg-blue-600 text-white rounded hover:bg-blue-700" onclick="syncGetServerIps()"><i class="fa fa-question-circle"></i></button></div></div>'+
     '<div class="mb-3"><label class="text-xs text-gray-600 block mb-1">本设备名称</label><input type="text" class="w-full border rounded px-2 py-1.5 text-sm" id="syncDeviceName" placeholder="例如：办公室主机" value="'+escHtml(c.deviceName||'本设备')+'"></div>'+
     '<div class="mb-3"><label class="inline-flex items-center gap-2 text-xs text-gray-700"><input type="checkbox" id="syncAutoSync" '+(c.autoSync?'checked':'')+' onchange="_collectConfig();"> 自动同步（每30秒自动推送/拉取）</label></div>'+
     '<div class="grid grid-cols-2 gap-2 mb-3">'+
@@ -5233,7 +5233,7 @@ async function syncGetServerIps(){
       '• 主机双击 <code style="background:#fff;padding:1px 4px;border-radius:2px;">启动ERP服务器.bat</code> 启动服务器<br>'+
       '• 启动后自动打开监控面板（<code>http://127.0.0.1:7001/admin/dashboard</code>）<br>'+
       '• 在主机 CMD 中执行 <code>ipconfig</code> 查看本机局域网IP（如 192.168.x.x）<br>'+
-      '• 其他电脑输入 <code>主机IP:7001</code> 即可连接同步（如 192.168.1.100:7001）<br>'+
+      '• 其他电脑输入 <code>主机IP:7001</code> 即可连接同步（如 192.168.1.8:7001）<br>'+
       '<span style="color:#16a34a;">默认端口：7001</span>';
   }
 }
