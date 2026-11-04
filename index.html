@@ -1,20 +1,20 @@
-
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<标题>广宏鞋业ERP系统 v5.6 尽力版</标题>
+<title>广宏鞋业ERP系统 v5.6 尽力版</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<链接 href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="样式表">
+<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-<脚本>
+<script>
 
 // ======= 统一筛选工具函数 v3.7 =======
-函数 toggleFilterPanel(panelId, btn) {
+function toggleFilterPanel(panelId, btn) {
   const panel = document.getElementById(panelId);
-  如果 (!面板) 返回;
-  面板.classList.toggle('show');
+  if (!panel) return;
+  panel.classList.toggle('show');
   if (btn) btn.classList.toggle('active', panel.classList.contains('show'));
 }
 
@@ -30,10 +30,10 @@ function resetFiltersForModule(moduleKey, renderFn) {
 
 function updateFilterBadge(btnId, count) {
   const btn = document.getElementById(btnId);
-  如果 (!btn) 返回;
-  let 徽章 = 按钮.querySelector('.filter-badge');
-  如果 (count > 0) {
-    如果 (!徽章) {
+  if (!btn) return;
+  let badge = btn.querySelector('.filter-badge');
+  if (count > 0) {
+    if (!badge) {
       badge = document.createElement('span');
       badge.className = 'filter-badge';
       btn.appendChild(badge);
